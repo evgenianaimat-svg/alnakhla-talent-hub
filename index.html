@@ -1,0 +1,1161 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al Nakhla Talent Hub - Staff Application</title>
+  <meta name="description" content="Have a skill to share? Apply to join the Al Nakhla Talent Hub and earn extra income by running sessions for residents.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Al Nakhla Talent Hub — Staff Application">
+  <meta property="og:description" content="Have a skill to share? Apply to join the Talent Hub and earn extra income by running sessions for residents after work.">
+  <meta property="og:image" content="https://evgenianaimat-svg.github.io/alnakhla-talent-hub/preview.png">
+  <meta property="og:url" content="https://evgenianaimat-svg.github.io/alnakhla-talent-hub/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Al Nakhla Talent Hub — Staff Application">
+  <meta name="twitter:description" content="Have a skill to share? Apply to join the Talent Hub and earn extra income by running sessions for residents after work.">
+  <meta name="twitter:image" content="https://evgenianaimat-svg.github.io/alnakhla-talent-hub/preview.png">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --panel: rgba(255,255,255,.04);
+      --line: rgba(255,255,255,.12);
+      --gold: #c9a84c;
+      --gold-dark: #a87d2a;
+      --text: #f3f3f3;
+      --muted: rgba(255,255,255,.62);
+      --muted-light: rgba(255,255,255,.34);
+      --error: #ff7070;
+      --error-bg: rgba(255,80,80,.08);
+      --error-line: rgba(255,80,80,.28);
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .hero {
+      background: linear-gradient(160deg, #15120d 0%, #0d0d0d 72%);
+      border-bottom: 1px solid rgba(201,168,76,.28);
+      padding: 50px 22px 42px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 78% 52% at 50% 0%, rgba(201,168,76,.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .resort-name {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .divider { width: 36px; height: 1px; background: var(--gold); margin: 0 auto 22px; }
+
+    .pill {
+      display: inline-block;
+      background: rgba(201,168,76,.12);
+      border: 1px solid rgba(201,168,76,.35);
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 29px;
+      font-weight: 800;
+      line-height: 1.16;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 em { font-style: normal; color: var(--gold); }
+
+    .hero p {
+      max-width: 380px;
+      margin: 0 auto 26px;
+      line-height: 1.68;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .perks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      max-width: 380px;
+      margin: 0 auto 24px;
+    }
+
+    .perk {
+      border-radius: 10px;
+      border: 1px solid rgba(201,168,76,.15);
+      background: rgba(255,255,255,.03);
+      padding: 12px 10px;
+    }
+
+    .perk h4 { font-size: 12px; color: #fff; margin-bottom: 4px; }
+    .perk p { font-size: 11px; color: var(--muted-light); margin: 0; line-height: 1.45; }
+
+    .scroll-cta {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .scroll-cta-label {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .scroll-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      animation: bounce 1.6s ease-in-out infinite;
+    }
+
+    .scroll-arrow span {
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-right: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      transform: rotate(45deg);
+      opacity: 1;
+    }
+
+    .scroll-arrow span:nth-child(2) {
+      opacity: 0.55;
+      margin-top: -6px;
+    }
+
+    .scroll-arrow span:nth-child(3) {
+      opacity: 0.2;
+      margin-top: -6px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(7px); }
+    }
+
+    .rules {
+      background: rgba(201,168,76,.04);
+      border-bottom: 1px solid rgba(201,168,76,.15);
+      padding: 17px 20px;
+    }
+
+    .rules-title {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .rule {
+      display: flex;
+      gap: 8px;
+      line-height: 1.45;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .rule::before {
+      content: '-';
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 30px 20px 50px;
+    }
+
+    .form-intro { text-align: center; margin-bottom: 28px; }
+    .form-intro h2 { font-size: 18px; margin-bottom: 4px; }
+    .form-intro p { font-size: 12px; color: var(--muted-light); }
+
+    .sh {
+      margin: 28px 0 16px;
+      border-bottom: 1px solid rgba(201,168,76,.2);
+      padding-bottom: 8px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .fg { margin-bottom: 16px; }
+
+    .fg label {
+      display: block;
+      color: rgba(255,255,255,.86);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .fg label .req { color: var(--gold); }
+
+    .fg label .hint {
+      display: block;
+      margin-top: 2px;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted-light);
+    }
+
+    .optional {
+      color: var(--muted-light);
+      font-weight: 400;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: #fff;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-family: inherit;
+      transition: border-color .2s, background .2s;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: rgba(201,168,76,.52);
+      background: rgba(201,168,76,.04);
+    }
+
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,.25); }
+    textarea { min-height: 84px; resize: vertical; }
+    select option { background: #1a1a1a; }
+
+    .choices { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .ch {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 9px 13px;
+      cursor: pointer;
+      transition: all .15s;
+    }
+
+    .ch input {
+      accent-color: var(--gold);
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+
+    .ch span { color: rgba(255,255,255,.78); font-size: 13px; }
+    .ch.on { border-color: rgba(201,168,76,.5); background: rgba(201,168,76,.09); }
+
+    .decl {
+      border: 1px solid rgba(201,168,76,.2);
+      border-radius: 12px;
+      background: rgba(201,168,76,.05);
+      padding: 16px;
+    }
+
+    .decl-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .decl-row:last-child { margin-bottom: 0; }
+
+    .decl-row input {
+      accent-color: var(--gold);
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .decl-row span {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    #err {
+      display: none;
+      margin-top: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--error-line);
+      background: var(--error-bg);
+      color: var(--error);
+      padding: 10px 14px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .submit {
+      width: 100%;
+      margin-top: 24px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #000;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 16px;
+      cursor: pointer;
+      transition: opacity .2s, transform .1s;
+    }
+
+    .submit:active { transform: scale(.985); }
+    .submit:disabled { opacity: .55; cursor: not-allowed; }
+
+    .spin {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 2px solid rgba(0,0,0,.3);
+      border-top-color: #000;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 8px;
+      animation: spin .7s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    #done {
+      display: none;
+      text-align: center;
+      padding: 78px 30px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    #done h2 { color: var(--gold); font-size: 23px; margin-bottom: 12px; }
+    #done p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+    #done strong { color: var(--gold); }
+
+    .admin-note {
+      margin-top: 22px;
+      padding: 14px;
+      border: 1px dashed rgba(201,168,76,.32);
+      border-radius: 10px;
+      background: rgba(255,255,255,.02);
+      text-align: left;
+    }
+
+    .admin-note h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .admin-note p {
+      margin: 0;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .admin-launch {
+      max-width: 560px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .admin-launch button {
+      border: 1px solid rgba(201,168,76,.35);
+      background: transparent;
+      color: var(--gold);
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 12px;
+      letter-spacing: .4px;
+      cursor: pointer;
+    }
+
+    .admin-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,.66);
+      padding: 18px;
+      z-index: 1000;
+    }
+
+    .admin-modal.open { display: flex; }
+
+    .admin-card {
+      width: min(560px, 100%);
+      border-radius: 14px;
+      border: 1px solid rgba(201,168,76,.25);
+      background: #131313;
+      box-shadow: 0 22px 60px rgba(0,0,0,.45);
+      padding: 20px;
+    }
+
+    .admin-card h3 {
+      font-size: 16px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .admin-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .admin-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .admin-actions button {
+      border: 1px solid rgba(201,168,76,.35);
+      background: rgba(201,168,76,.1);
+      color: #f5e3a8;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .admin-actions button.secondary {
+      background: transparent;
+      color: rgba(255,255,255,.82);
+      border-color: rgba(255,255,255,.2);
+    }
+
+    .admin-status {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted-light);
+      line-height: 1.5;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 16px;
+      color: rgba(255,255,255,.2);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        padding: 42px 16px 34px;
+      }
+
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      .hero p {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .rules {
+        padding: 15px 14px;
+      }
+
+      .wrap {
+        padding: 24px 14px 38px;
+      }
+
+      .sh {
+        letter-spacing: 1.6px;
+      }
+
+      .choices {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .ch,
+      .admin-actions button,
+      .admin-launch button,
+      .submit,
+      .hero-btn,
+      input[type="text"],
+      input[type="tel"],
+      input[type="number"],
+      textarea,
+      select {
+        min-height: 44px;
+      }
+
+      .admin-launch {
+        padding: 0 14px 8px;
+      }
+
+      .admin-launch button,
+      .admin-actions button {
+        width: 100%;
+      }
+
+      .admin-modal {
+        align-items: flex-end;
+        padding: 8px;
+      }
+
+      .admin-card {
+        border-radius: 14px 14px 0 0;
+        padding: 16px;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+
+      .admin-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 23px; }
+      .resort-name { letter-spacing: 2.4px; }
+      .pill { letter-spacing: 2px; }
+    }
+    @media (min-width: 480px) {
+      .hero h1 { font-size: 34px; }
+      .perks { grid-template-columns: repeat(4, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="resort-name">Al Nakhla Residential Resort</div>
+  <div class="divider"></div>
+  <div class="pill">Staff Opportunity</div>
+  <h1>Turn Your <em>Talent</em><br>Into Income</h1>
+  <p>
+    Have a skill you can share with residents after work? Apply below to join the talent hub.
+    Approved talents can run sessions and build an extra income stream.
+  </p>
+
+  <div class="perks">
+    <div class="perk"><h4>Extra income</h4><p>Monetize your practical skill.</p></div>
+    <div class="perk"><h4>Recognition</h4><p>Get visibility with management.</p></div>
+    <div class="perk"><h4>Community</h4><p>Serve residents with value.</p></div>
+    <div class="perk"><h4>Growth</h4><p>Build a stronger reputation.</p></div>
+  </div>
+
+  <div class="scroll-cta">
+    <div class="scroll-cta-label">Scroll down to apply</div>
+    <div class="scroll-arrow">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+<div class="rules">
+  <div class="rules-title">Ground Rules</div>
+  <div class="rule">Sessions are only allowed outside official working hours.</div>
+  <div class="rule">Two free trial sessions are required before paid sessions.</div>
+  <div class="rule">Main job duties and KPIs must remain unaffected.</div>
+  <div class="rule">All activities are subject to management approval.</div>
+</div>
+
+<div class="wrap" id="form-top">
+  <div class="form-intro">
+    <h2>Your Application</h2>
+    <p>No login needed. Estimated time: 3 minutes.</p>
+  </div>
+
+  <form id="tf" novalidate>
+    <div class="sh">1 - About You</div>
+
+    <div class="fg">
+      <label>Full Name <span class="req">*</span></label>
+      <input type="text" id="name" placeholder="Your full name" required>
+    </div>
+
+    <div class="fg">
+      <label>Employee ID <span class="req">*</span></label>
+      <input type="text" id="empId" inputmode="numeric" autocomplete="off" placeholder="Your staff/employee ID" required>
+    </div>
+
+    <div class="fg">
+      <label>Department <span class="req">*</span></label>
+      <input type="text" id="dept" placeholder="e.g. Security, Maintenance, Housekeeping, F&B" required>
+    </div>
+
+    <div class="fg">
+      <label>Job Title <span class="req">*</span></label>
+      <input type="text" id="title" placeholder="Your current position" required>
+    </div>
+
+    <div class="fg">
+      <label>Mobile Number <span class="req">*</span></label>
+      <input type="tel" id="mobile" inputmode="tel" autocomplete="tel" placeholder="e.g. 05XXXXXXXX" required>
+    </div>
+
+    <div class="sh">2 - Your Skill</div>
+
+    <div class="fg">
+      <label>What skill or talent would you like to offer? <span class="req">*</span>
+        <span class="hint">e.g. kids football, personal training, art, cooking, language lessons</span>
+      </label>
+      <input type="text" id="skill" placeholder="Name of your skill" required>
+    </div>
+
+    <div class="fg">
+      <label>Are you certified? <span class="req">*</span></label>
+      <div class="choices">
+        <label class="ch"><input type="radio" name="cert" value="Yes - certified"><span>Yes, I have a certificate</span></label>
+        <label class="ch"><input type="radio" name="cert" value="No - experience/talent"><span>No, but I have experience</span></label>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Describe your experience or certification <span class="req">*</span>
+        <span class="hint">Give enough detail so management can evaluate quality.</span>
+      </label>
+      <textarea id="exp" placeholder="e.g. 6 years coaching youth football, or Certified Personal Trainer from XYZ" required></textarea>
+    </div>
+
+    <div class="sh">3 - Who Is It For?</div>
+
+    <div class="fg">
+      <label>Target audience <span class="req">*</span>
+        <span class="hint">Select all that apply.</span>
+      </label>
+      <div class="choices">
+        <label class="ch"><input type="checkbox" name="aud" value="Kids under 6"><span>Kids under 6</span></label>
+        <label class="ch"><input type="checkbox" name="aud" value="Kids 6-12"><span>Kids 6-12</span></label>
+        <label class="ch"><input type="checkbox" name="aud" value="Teenagers"><span>Teenagers</span></label>
+        <label class="ch"><input type="checkbox" name="aud" value="Adults"><span>Adults</span></label>
+        <label class="ch"><input type="checkbox" name="aud" value="Ladies only"><span>Ladies only</span></label>
+        <label class="ch"><input type="checkbox" name="aud" value="Open to all"><span>Open to all</span></label>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Activity level <span class="req">*</span></label>
+      <div class="choices">
+        <label class="ch"><input type="radio" name="lvl" value="Beginner"><span>Beginner</span></label>
+        <label class="ch"><input type="radio" name="lvl" value="Intermediate"><span>Intermediate</span></label>
+        <label class="ch"><input type="radio" name="lvl" value="Advanced"><span>Advanced</span></label>
+        <label class="ch"><input type="radio" name="lvl" value="All levels"><span>All levels</span></label>
+      </div>
+    </div>
+
+    <div class="sh">4 - Session Details</div>
+
+    <div class="fg">
+      <label>What exactly will you offer? <span class="req">*</span>
+        <span class="hint">Describe a typical session in simple terms.</span>
+      </label>
+      <textarea id="desc" placeholder="e.g. A 60-minute group session teaching kids basic football skills" required></textarea>
+    </div>
+
+    <div class="fg">
+      <label>Session duration <span class="req">*</span></label>
+      <div class="choices">
+        <label class="ch"><input type="radio" name="dur" value="30 min"><span>30 min</span></label>
+        <label class="ch"><input type="radio" name="dur" value="45 min"><span>45 min</span></label>
+        <label class="ch"><input type="radio" name="dur" value="60 min"><span>60 min</span></label>
+        <label class="ch"><input type="radio" name="dur" value="90 min"><span>90 min</span></label>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Max participants per session <span class="req">*</span></label>
+      <input type="number" id="pax" placeholder="e.g. 8" min="1" max="50" required>
+    </div>
+
+    <div class="sh">5 - Availability</div>
+
+    <div class="fg">
+      <label>When can you run sessions? <span class="req">*</span>
+        <span class="hint">After working hours only. Select all that apply.</span>
+      </label>
+      <div class="choices">
+        <label class="ch"><input type="checkbox" name="avail" value="Weekdays after work"><span>Weekdays after work</span></label>
+        <label class="ch"><input type="checkbox" name="avail" value="Weekends"><span>Weekends</span></label>
+        <label class="ch"><input type="checkbox" name="avail" value="Evenings only"><span>Evenings only</span></label>
+        <label class="ch"><input type="checkbox" name="avail" value="Flexible"><span>Flexible</span></label>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Preferred days and time <span class="req">*</span>
+        <span class="hint">Example: Sunday and Tuesday, 6:00 PM - 7:00 PM</span>
+      </label>
+      <input type="text" id="sched" placeholder="Days and time you are available" required>
+    </div>
+
+    <div class="sh">6 - Trial and Pricing</div>
+
+    <div class="fg">
+      <label>Ready to do 2 free trial sessions first? <span class="req">*</span></label>
+      <div class="choices">
+        <label class="ch"><input type="radio" name="trial" value="Yes - committed to 2 free trial sessions"><span>Yes, I commit</span></label>
+        <label class="ch"><input type="radio" name="trial" value="No"><span>No</span></label>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label>Suggested price per session <span class="optional">(optional)</span>
+        <span class="hint">Leave blank if unsure. Management can discuss with you.</span>
+      </label>
+      <input type="text" id="price" placeholder="e.g. 50 SAR per session">
+    </div>
+
+    <div class="fg">
+      <label>Preferred location <span class="optional">(optional)</span></label>
+      <div class="choices">
+        <label class="ch"><input type="radio" name="loc" value="Royal Hall"><span>Royal Hall</span></label>
+        <label class="ch"><input type="radio" name="loc" value="Arts and Crafts Room"><span>Arts and Crafts</span></label>
+        <label class="ch"><input type="radio" name="loc" value="Outdoor Area"><span>Outdoor</span></label>
+        <label class="ch"><input type="radio" name="loc" value="Sports Area"><span>Sports Area</span></label>
+      </div>
+    </div>
+
+    <div class="sh">Declaration</div>
+
+    <div class="decl">
+      <label class="decl-row">
+        <input type="checkbox" id="d1" required>
+        <span>I will run this activity only outside my working hours.</span>
+      </label>
+      <label class="decl-row">
+        <input type="checkbox" id="d2" required>
+        <span>This will not affect my main job duties or performance.</span>
+      </label>
+      <label class="decl-row">
+        <input type="checkbox" id="d3" required>
+        <span>I understand this is subject to management approval.</span>
+      </label>
+    </div>
+
+    <div id="err" role="alert" aria-live="assertive"></div>
+    <button type="submit" class="submit" id="sbtn">Submit Application</button>
+  </form>
+</div>
+
+<div id="done">
+  <h2>Application Received</h2>
+  <p>
+    Thank you for stepping forward. The Recreation team will review all applications
+    and contact shortlisted talents for the next step.
+  </p>
+  <p id="doneNote" style="margin-top:10px;color:rgba(255,255,255,.75);font-size:13px;">
+    Your response has been safely recorded.
+  </p>
+
+  <div class="admin-note">
+    <h4>Admin Export</h4>
+    <p>
+      This form stores each submission in the browser as well. Admin can open the export panel to download all registered employees as CSV or JSON.
+      For security, change <code>ADMIN_PASSCODE</code> inside the script before sharing the file.
+    </p>
+  </div>
+</div>
+
+<div class="admin-launch">
+  <button id="openAdminBtn" type="button">Admin Data Export</button>
+</div>
+
+<div class="footer">Al Nakhla Residential Resort - Talent Hub Program - 2026</div>
+
+<div class="admin-modal" id="adminModal" aria-hidden="true">
+  <div class="admin-card">
+    <h3>Admin Data Export Panel</h3>
+    <p>
+      Enter the admin passcode to view and download all registrations saved on this browser.
+    </p>
+
+    <div class="fg" style="margin-top:12px;">
+      <label>Admin Passcode</label>
+      <input type="password" id="adminPass" placeholder="Enter passcode">
+    </div>
+
+    <div class="admin-actions">
+      <button id="unlockBtn" type="button">Unlock</button>
+      <button class="secondary" id="downloadCsvBtn" type="button" disabled>Download CSV</button>
+      <button class="secondary" id="downloadJsonBtn" type="button" disabled>Download JSON</button>
+      <button class="secondary" id="clearLocalBtn" type="button" disabled>Clear Local Records</button>
+      <button class="secondary" id="closeAdminBtn" type="button">Close</button>
+    </div>
+
+    <div class="admin-status" id="adminStatus" aria-live="polite">Locked. No actions available.</div>
+  </div>
+</div>
+
+<script>
+const ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE';
+const STORAGE_KEY = 'ani_talent_hub_submissions_v1';
+const ADMIN_PASSCODE = 'ANI_ADMIN_2026';
+
+const formEl = document.getElementById('tf');
+const errDiv = document.getElementById('err');
+const submitBtn = document.getElementById('sbtn');
+const doneNote = document.getElementById('doneNote');
+
+const adminModal = document.getElementById('adminModal');
+const openAdminBtn = document.getElementById('openAdminBtn');
+const closeAdminBtn = document.getElementById('closeAdminBtn');
+const unlockBtn = document.getElementById('unlockBtn');
+const adminPassInput = document.getElementById('adminPass');
+const adminStatus = document.getElementById('adminStatus');
+const downloadCsvBtn = document.getElementById('downloadCsvBtn');
+const downloadJsonBtn = document.getElementById('downloadJsonBtn');
+const clearLocalBtn = document.getElementById('clearLocalBtn');
+
+
+let adminUnlocked = false;
+
+document.querySelectorAll('.ch input').forEach((input) => {
+  input.addEventListener('change', () => {
+    if (input.type === 'radio') {
+      document.querySelectorAll(`input[name="${input.name}"]`).forEach((r) => {
+        r.closest('.ch').classList.remove('on');
+      });
+    }
+    input.closest('.ch').classList.toggle('on', input.checked);
+  });
+});
+
+formEl.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const getText = (id) => document.getElementById(id).value.trim();
+  const getRadio = (name) => {
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    return selected ? selected.value : '';
+  };
+  const getChecks = (name) => Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map((el) => el.value).join(', ');
+
+  const fields = {
+    name: getText('name'),
+    employeeId: getText('empId'),
+    dept: getText('dept'),
+    title: getText('title'),
+    mobile: getText('mobile'),
+    skill: getText('skill'),
+    cert: getRadio('cert'),
+    exp: getText('exp'),
+    aud: getChecks('aud'),
+    lvl: getRadio('lvl'),
+    desc: getText('desc'),
+    dur: getRadio('dur'),
+    pax: getText('pax'),
+    avail: getChecks('avail'),
+    sched: getText('sched'),
+    trial: getRadio('trial'),
+    price: getText('price'),
+    loc: getRadio('loc'),
+  };
+
+  const d1 = document.getElementById('d1').checked;
+  const d2 = document.getElementById('d2').checked;
+  const d3 = document.getElementById('d3').checked;
+
+  const checks = [
+    [fields.name, 'Full Name is required'],
+    [fields.employeeId, 'Employee ID is required'],
+    [fields.dept, 'Department is required'],
+    [fields.title, 'Job Title is required'],
+    [fields.mobile, 'Mobile Number is required'],
+    [fields.skill, 'Please name your skill'],
+    [fields.cert, 'Please select if you are certified'],
+    [fields.exp, 'Please describe your experience or certification'],
+    [fields.aud, 'Please select at least one target audience'],
+    [fields.lvl, 'Please select activity level'],
+    [fields.desc, 'Please describe what you will offer'],
+    [fields.dur, 'Please select session duration'],
+    [fields.pax, 'Please enter max participants'],
+    [fields.avail, 'Please select your availability'],
+    [fields.sched, 'Please write your preferred days and time'],
+    [fields.trial, 'Please confirm trial sessions'],
+    [d1 && d2 && d3, 'Please confirm all declaration points'],
+  ];
+
+  for (const [ok, message] of checks) {
+    if (!ok) {
+      errDiv.style.display = 'block';
+      errDiv.textContent = 'Please complete: ' + message;
+      errDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+  }
+
+  errDiv.style.display = 'none';
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span class="spin"></span>Submitting...';
+
+  const now = new Date();
+  const submission = {
+    ...fields,
+    submittedAtISO: now.toISOString(),
+    submittedAtLocal: now.toLocaleString(),
+  };
+
+  saveLocalSubmission(submission);
+
+  if (ACCESS_KEY === 'YOUR_ACCESS_KEY_HERE') {
+    setTimeout(() => showDone('local_only'), 700);
+    return;
+  }
+
+  try {
+    const emailPayload = {
+      access_key: ACCESS_KEY,
+      subject: `Talent Hub Application - ${fields.name} (${fields.dept})`,
+      from_name: 'Al Nakhla Talent Hub',
+      employee_name: fields.name,
+      employee_id: fields.employeeId,
+      department: fields.dept,
+      job_title: fields.title,
+      mobile: fields.mobile,
+      offered_skill: fields.skill,
+      certification_status: fields.cert,
+      experience: fields.exp,
+      target_audience: fields.aud,
+      level: fields.lvl,
+      session_description: fields.desc,
+      duration: fields.dur,
+      max_participants: fields.pax,
+      availability: fields.avail,
+      preferred_schedule: fields.sched,
+      trial_commitment: fields.trial,
+      suggested_price: fields.price || '-',
+      preferred_location: fields.loc || '-',
+      submitted_at: submission.submittedAtLocal,
+    };
+
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(emailPayload),
+    });
+
+    const json = await response.json();
+    if (!json.success) {
+      throw new Error(json.message || 'Unknown error');
+    }
+
+    showDone('email_sent');
+  } catch (error) {
+    showDone('email_failed_local_saved');
+  }
+});
+
+function showDone(mode) {
+  const wrap = document.querySelector('.wrap');
+  const done = document.getElementById('done');
+  if (wrap) wrap.style.display = 'none';
+  if (done) done.style.display = 'block';
+
+  if (doneNote) {
+    if (mode === 'email_sent') {
+      doneNote.textContent = 'Application submitted successfully.';
+    } else if (mode === 'email_failed_local_saved') {
+      doneNote.textContent = 'Saved locally on this device. Internet issue prevented email delivery.';
+    } else {
+      doneNote.textContent = 'Saved locally on this device. Admin can export all records anytime.';
+    }
+  }
+
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 50);
+}
+
+function readSubmissions() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch (error) {
+    return [];
+  }
+}
+
+function saveLocalSubmission(submission) {
+  const all = readSubmissions();
+  all.push(submission);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(all));
+}
+
+function escCsv(value) {
+  const text = String(value ?? '');
+  if (text.includes('"') || text.includes(',') || text.includes('\n')) {
+    return '"' + text.replace(/"/g, '""') + '"';
+  }
+  return text;
+}
+
+function toCsv(rows) {
+  if (!rows.length) return '';
+  const columns = [
+    'submittedAtISO', 'submittedAtLocal', 'name', 'employeeId', 'dept', 'title', 'mobile',
+    'skill', 'cert', 'exp', 'aud', 'lvl', 'desc', 'dur', 'pax', 'avail', 'sched', 'trial', 'price', 'loc'
+  ];
+
+  const head = columns.join(',');
+  const lines = rows.map((row) => columns.map((key) => escCsv(row[key] || '')).join(','));
+  return [head, ...lines].join('\n');
+}
+
+function downloadTextFile(filename, text, mimeType) {
+  const blob = new Blob([text], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function currentStamp() {
+  return new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
+}
+
+function updateAdminStatus(message) {
+  const count = readSubmissions().length;
+  const suffix = `Records on this browser: ${count}`;
+  adminStatus.textContent = message ? `${message} | ${suffix}` : suffix;
+}
+
+function setAdminActions(enabled) {
+  downloadCsvBtn.disabled = !enabled;
+  downloadJsonBtn.disabled = !enabled;
+  clearLocalBtn.disabled = !enabled;
+}
+
+openAdminBtn.addEventListener('click', () => {
+  adminModal.classList.add('open');
+  adminPassInput.value = '';
+  adminUnlocked = false;
+  setAdminActions(false);
+  updateAdminStatus('Locked. Enter passcode to continue.');
+});
+
+closeAdminBtn.addEventListener('click', () => {
+  adminModal.classList.remove('open');
+});
+
+unlockBtn.addEventListener('click', () => {
+  if (adminPassInput.value !== ADMIN_PASSCODE) {
+    adminUnlocked = false;
+    setAdminActions(false);
+    updateAdminStatus('Incorrect passcode.');
+    return;
+  }
+
+  adminUnlocked = true;
+  setAdminActions(true);
+  updateAdminStatus('Unlocked. You can now export data.');
+});
+
+downloadCsvBtn.addEventListener('click', () => {
+  if (!adminUnlocked) return;
+  const rows = readSubmissions();
+  if (!rows.length) {
+    updateAdminStatus('No records available for export.');
+    return;
+  }
+
+  const csv = toCsv(rows);
+  downloadTextFile(`talent-hub-registrations-${currentStamp()}.csv`, csv, 'text/csv;charset=utf-8');
+  updateAdminStatus('CSV download generated.');
+});
+
+downloadJsonBtn.addEventListener('click', () => {
+  if (!adminUnlocked) return;
+  const rows = readSubmissions();
+  if (!rows.length) {
+    updateAdminStatus('No records available for export.');
+    return;
+  }
+
+  const json = JSON.stringify(rows, null, 2);
+  downloadTextFile(`talent-hub-registrations-${currentStamp()}.json`, json, 'application/json;charset=utf-8');
+  updateAdminStatus('JSON download generated.');
+});
+
+clearLocalBtn.addEventListener('click', () => {
+  if (!adminUnlocked) return;
+  const shouldClear = confirm('Delete all locally saved records from this browser?');
+  if (!shouldClear) return;
+
+  localStorage.removeItem(STORAGE_KEY);
+  updateAdminStatus('All local records deleted.');
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'a') {
+    openAdminBtn.click();
+  }
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
